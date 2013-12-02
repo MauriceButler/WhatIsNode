@@ -1,0 +1,295 @@
+<!--
+Google IO 2012 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DDD Brisbane 2013</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="nobackground dark">
+  <!--  Blank -->
+  </slide>
+
+  <slide class="title-slide segue nobackground ">
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <img class="center" src="images/node_logo_dark.png"></img>
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+    </hgroup>
+
+    <div class="presenter-block">
+      <div class="presenter">
+        <b>Maurice Butler</b>
+      </div>
+      <div>@butlermaurice</div>
+      <div>Sidelab</div>
+    </div>
+
+    <footer class="source">image source: nodejs.org</footer>
+  </slide>
+
+  <slide class="sponsors ">
+    <hgroup>
+    </hgroup>
+    <article>
+    </article>
+  </slide>
+
+  <slide class="">
+    <hgroup>
+      <h1>Yay JavaScript!</h1>
+    </hgroup>
+    <article>
+      <p>This is the most exciting time to be a JavaScript developer, and it will only get better.</p>
+
+      </p>Due to the advent of HTML5, the abandonment of Flash, the poliferation of mobile devices, and most certainly because of Node.js, JavaScript is becoming the language of choice today and unquestionably for the near future.</p>
+
+    <img class="center" src="images/Javascript-AllTheThings.jpg"></img>
+    <footer class="source">image source: gabijack.com/javascriptallthings</footer>
+
+    </article>
+  </slide>
+
+  <slide class="">
+    <hgroup>
+      <h1>What is Node.js</h1>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>
+          <h2> From the Website </h2>
+          <li>Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.</li>
+        </li>
+        <li>
+          <h2> Actual Description </h2>
+          <li>
+            <img class="center" src="images/awesome.gif"></img>
+          </li>
+        </li>
+      </ul>
+    </article>
+    <footer class="source">image source: i.imgur.com/nuR4V.gif</footer>
+  </slide>
+
+  <slide class="">
+    <hgroup>
+      <h1>Under the hood</h1>
+    </hgroup>
+
+    <article>
+      <p>Node.js is made up of</p>
+
+      <ul>
+        <li>Google's V8 JavaScript engine</li>
+        <li>The platform abstraction layer</li>
+        <li>The Node core library</li>
+      </ul>
+
+      <p>Node.js itself is open source and on <a href="https://github.com/joyent/node">GitHub</a></p>
+
+    </article>
+  </slide>
+
+  <slide class="">
+    <hgroup>
+      <h1>Under the hood</h1>
+    </hgroup>
+
+    <article>
+
+      <p>The majority of Node.js is actualy written in JavaScript and the abstraction layer mostly in C and C++</p>
+
+      <img class="center" src="images/pie.png"></img>
+
+    </article>
+  </slide>
+
+  <slide class="">
+    <hgroup>
+      <h1>How does it work</h1>
+    </hgroup>
+    <article>
+      <p>Node.js runs JavaScript by leveraging V8, Google’s fast JavaScript engine designed for Chrome.</p>
+
+      <p>This allows Node.js to create a runtime environment that translates JavaScript into native machine language, instead of working overtime to interpret it as bytecode, giving Node.js its speed.</p>
+
+      <p>In a nutshell the Node.js environment provides a JavaScript interaction layer to underlying systems calls.</p>
+
+    <img class="center" src="images/nodejs_stack.jpg"></img>
+    <footer class="source">image source: storagemojo.com/2010/08/05/clouds-app-killer</footer>
+    </article>
+  </slide>
+
+  <slide class="">
+    <hgroup>
+      <h1>Speed and Scalability</h1>
+    </hgroup>
+
+    <article>
+      <ul class="build">
+        <li><b>Q: </b> What to webservers do?</li>
+        <li><b>A: </b> I/O</li>
+        <li><b>Q: </b> What is realy slow?</li>
+        <li><b>A: </b> I/O</li>
+        <li><b>Q: </b> What blocks the thread?</li>
+        <li><b>A: </b> I/O</li>
+        <li><b>Q: </b> What happens when you add more threads?</li>
+        <li><b>A: </b> problems more of You have.</li>
+        <li><img class="top-right" src="images/yoda.jpg"></img></li>
+      </ul>
+    <footer class="source">image source: empireonline.com</footer>
+
+    </article>
+  </slide>
+
+<slide class="">
+    <hgroup>
+      <h1>Event loop</h1>
+    </hgroup>
+
+    <article>
+      <p>Node.js, uses an event loop instead of threads JavaScript is extremely well suited to event-based programming because it has anonymous functions and closures, and JavaScript developers already know how to program in this way.</p>
+
+      <p>This event-based model makes Node.js very fast, and able to scale to millions of concurrent connections very easy.</p>
+
+    </article>
+  </slide>
+
+
+  <slide class="">
+    <hgroup>
+      <h1>Async</h1>
+    </hgroup>
+      <p>Node takes advantage of the fact that servers spend most of their time waiting for .</p>
+
+      <p>Every I/O operation in Node.js is (can be) asynchronous, meaning that the server can continue to process other things while the I/O operations, like reading a file from a hard drive, accessing an external web service or waiting for a file to upload, are completed.</p>
+    <article>
+    </article>
+  </slide>
+
+  <slide class="demo dark">
+    <article class="flexbox vcenter">
+      <h1>I/O DEMO</h1>
+    </article>
+  </slide>
+
+<slide class="">
+    <hgroup>
+      <h1>Modules</h1>
+    </hgroup>
+    <article>
+      <p>Node.js uses a module architecture to simplify the creation of complex applications.</p>
+
+      <p>Modules are encapsulated pieces of code akin to libraries or classes. Each module contains a set of functions related to the subject of the module. For example, the http module contains functions specific to HTTP.</p>
+
+      <p>Node.js provides a few core modules out of the box to help you access files on the file system, create HTTP and TCP/UDP servers, and perform other useful functions.</p>
+
+      <p>To include a prcomposed module the require() function is used as such:</p>
+
+      <pre class="prettyprint" data-lang="javascript">
+        var http = require('http');
+      </pre>
+
+      <p>In the above code, we passed the name of a module to the require() function. This causes Node to search for a node_modules folder in our application’s directory, and search for the http module in that folder. If Node does not find the node_modules folder (or the http module within it), it then looks through the global module cache. </p>
+
+      <p>You can also specify an actual file by passing a relative or absolute path, like so:</p>
+      <pre class="prettyprint" data-lang="javascript">
+        var myModule = require('./myModule.js');
+      </pre>
+
+    </article>
+  </slide>
+
+  <slide class="demo dark">
+    <article class="flexbox vcenter">
+      <h1>Webserver DEMO</h1>
+    </article>
+  </slide>
+
+  <slide class=" ">
+    <hgroup>
+      <h1>NPM</h1>
+    </hgroup>
+    <article>
+      <p>NPM (Node Package Manager). Is the default package manager and is automatically installed with Node.js.</p>
+
+      <p>To install a module, open your terminal/command line, navigate to the desired folder, and execute the following command:</p>
+
+      <pre class="prettyprint" data-lang="shell">
+        npm install module_name
+      </pre>
+
+      <p>It doesn’t matter what OS you have the above command will install the module you specify.</p>
+
+    </article>
+  </slide>
+
+  <slide class="demo dark">
+    <article class="flexbox vcenter">
+      <h1>NPM DEMO</h1>
+    </article>
+  </slide>
+
+  <slide class="">
+    <hgroup>
+      <h1>Usage</h1>
+    </hgroup>
+    <article>
+      <p>Node.js is the immediate and near future of modern web application development with JavaScript as the sole server-side language.</p>
+
+      <p>While Node.js, is predominantly thought of in relation to web, it is however also very good for creating command line tooling that will work accross multiple platforms. (Windows, Linux and OSX)</p>
+
+      <p>Combine this with the power of npm and you have a cross platform package manager to install cross platform tooling!</p>
+
+    <img class="center" src="images/beautiful.gif"></img>
+    <footer class="source">image source: bit.ly/1ggGtlY</footer>
+    </article>
+  </slide>
+
+  <slide class="demo dark">
+    <article class="flexbox vcenter">
+      <h1>Tooling DEMO</h1>
+    </article>
+  </slide>
+
+  <slide class="title-slide segue nobackground">
+    <hgroup class="auto-fadein">
+      <h1>Thanks!</h1>
+    </hgroup>
+
+    <div class="presenter-block">
+      <div class="presenter">
+        <b>Maurice Butler</b>
+      </div>
+      <div>@butlermaurice</div>
+      <div>Sidelab</div>
+    </div>
+
+  </slide>
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+</html>
