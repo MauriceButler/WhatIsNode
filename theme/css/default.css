@@ -1537,3 +1537,9 @@ aside.gdbar img {
   font-size: 1em;
   margin-right: -60px;
 }
+
+img.top-right{
+  position: absolute;
+  top: 0;
+  right: 0;
+}

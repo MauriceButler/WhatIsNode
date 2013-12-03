@@ -107,7 +107,8 @@ URL: https://code.google.com/p/io-2012-slides
       </ul>
 
       <p>Node.js itself is open source and on <a href="https://github.com/joyent/node">GitHub</a></p>
-
+      <img class="center" src="images/octocat.png"></img>
+      <footer class="source">image source: octodex.github.com</footer>
     </article>
   </slide>
 
@@ -176,16 +177,30 @@ URL: https://code.google.com/p/io-2012-slides
     </article>
   </slide>
 
+<slide class="">
+    <hgroup>
+      <h1>Sync</h1>
+    </hgroup>
+    <article>
+      <p>Node takes advantage of the fact that usualy, servers spend most of their time waiting for I/O.</p>
 
-  <slide class="">
+    <p>For Example: Traditional approach</p>
+    <img src="images/blocking.png">
+    </article>
+    <footer class="source">image source: udemy.com/lectures/understanding-the-nodejs-event-loop-91298</footer>
+  </slide>
+
+<slide class="">
     <hgroup>
       <h1>Async</h1>
     </hgroup>
-      <p>Node takes advantage of the fact that servers spend most of their time waiting for .</p>
-
-      <p>Every I/O operation in Node.js is (can be) asynchronous, meaning that the server can continue to process other things while the I/O operations, like reading a file from a hard drive, accessing an external web service or waiting for a file to upload, are completed.</p>
     <article>
+      <p>Every I/O operation in Node.js is (can be) asynchronous, meaning that the server can continue to process other things while the I/O operations, like reading a file from a hard drive, accessing an external web service or querying a database, are completed.</p>
+
+    <p>For Example: No blocking approach</p>
+    <img src="images/non-blocking.png">
     </article>
+    <footer class="source">image source: udemy.com/lectures/understanding-the-nodejs-event-loop-91298</footer>
   </slide>
 
   <slide class="demo dark">
@@ -203,22 +218,36 @@ URL: https://code.google.com/p/io-2012-slides
 
       <p>Modules are encapsulated pieces of code akin to libraries or classes. Each module contains a set of functions related to the subject of the module. For example, the http module contains functions specific to HTTP.</p>
 
-      <p>Node.js provides a few core modules out of the box to help you access files on the file system, create HTTP and TCP/UDP servers, and perform other useful functions.</p>
+    </article>
+  </slide>
 
-      <p>To include a prcomposed module the require() function is used as such:</p>
+  <slide class="">
+      <hgroup>
+        <h1>Modules</h1>
+      </hgroup>
+      <article>
+        <p>Node.js provides a few core modules out of the box to help you access files on the file system, create HTTP and TCP/UDP servers, and perform other useful functions.</p>
+
+      <p>To include a precomposed module the require() function is used as such:</p>
 
       <pre class="prettyprint" data-lang="javascript">
         var http = require('http');
       </pre>
+      </article>
+  </slide>
 
-      <p>In the above code, we passed the name of a module to the require() function. This causes Node to search for a node_modules folder in our application’s directory, and search for the http module in that folder. If Node does not find the node_modules folder (or the http module within it), it then looks through the global module cache. </p>
+  <slide class="">
+      <hgroup>
+        <h1>Modules</h1>
+      </hgroup>
+      <article>
+        <p>In the previous code, we passed the name of a module to the require() function. This causes Node to search for a node_modules folder in our application’s directory, and search for the http module in that folder. If Node does not find the node_modules folder (or the http module within it), it then looks through the global module cache. </p>
 
       <p>You can also specify an actual file by passing a relative or absolute path, like so:</p>
       <pre class="prettyprint" data-lang="javascript">
         var myModule = require('./myModule.js');
       </pre>
-
-    </article>
+      </article>
   </slide>
 
   <slide class="demo dark">
