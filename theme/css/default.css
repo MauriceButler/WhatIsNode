@@ -1543,3 +1543,9 @@ img.top-right{
   top: 0;
   right: 0;
 }
+
+img.center {
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -61,7 +61,7 @@ URL: https://code.google.com/p/io-2012-slides
       <h1>Yay JavaScript!</h1>
     </hgroup>
     <article>
-      <p>This is the most exciting time to be a JavaScript developer, and it will only get better.</p>
+      <p>This is the most exciting time to be a JavaScript developer, and it is only going to get better.</p>
 
       </p>Due to the advent of HTML5, the abandonment of Flash, the poliferation of mobile devices, and most certainly because of Node.js, JavaScript is becoming the language of choice today and unquestionably for the near future.</p>
 
@@ -156,8 +156,7 @@ URL: https://code.google.com/p/io-2012-slides
         <li><b>Q: </b> What blocks the thread?</li>
         <li><b>A: </b> I/O</li>
         <li><b>Q: </b> What happens when you add more threads?</li>
-        <li><b>A: </b> problems more of You have.</li>
-        <li><img class="top-right" src="images/yoda.jpg"></img></li>
+        <li><b>A: </b> Problems more of you have.<img class="top-right" src="images/yoda.jpg"></img></li>
       </ul>
     <footer class="source">image source: empireonline.com</footer>
 
@@ -174,7 +173,9 @@ URL: https://code.google.com/p/io-2012-slides
 
       <p>This event-based model makes Node.js very fast, and able to scale to millions of concurrent connections very easy.</p>
 
+    <img class="center" src="images/loop.png">
     </article>
+    <footer class="source">image source: measureofdoubt.files.wordpress.com</footer>
   </slide>
 
 <slide class="">
@@ -185,7 +186,7 @@ URL: https://code.google.com/p/io-2012-slides
       <p>Node takes advantage of the fact that usualy, servers spend most of their time waiting for I/O.</p>
 
     <p>For Example: Traditional approach</p>
-    <img src="images/blocking.png">
+    <img class="center" src="images/blocking.png">
     </article>
     <footer class="source">image source: udemy.com/lectures/understanding-the-nodejs-event-loop-91298</footer>
   </slide>
@@ -198,7 +199,7 @@ URL: https://code.google.com/p/io-2012-slides
       <p>Every I/O operation in Node.js is (can be) asynchronous, meaning that the server can continue to process other things while the I/O operations, like reading a file from a hard drive, accessing an external web service or querying a database, are completed.</p>
 
     <p>For Example: No blocking approach</p>
-    <img src="images/non-blocking.png">
+    <img class="center" src="images/non-blocking.png">
     </article>
     <footer class="source">image source: udemy.com/lectures/understanding-the-nodejs-event-loop-91298</footer>
   </slide>
@@ -218,7 +219,9 @@ URL: https://code.google.com/p/io-2012-slides
 
       <p>Modules are encapsulated pieces of code akin to libraries or classes. Each module contains a set of functions related to the subject of the module. For example, the http module contains functions specific to HTTP.</p>
 
+    <img class="center" src="images/lego.jpg">
     </article>
+    <footer class="source">image source: w3.org</footer>
   </slide>
 
   <slide class="">
@@ -241,19 +244,15 @@ URL: https://code.google.com/p/io-2012-slides
         <h1>Modules</h1>
       </hgroup>
       <article>
-        <p>In the previous code, we passed the name of a module to the require() function. This causes Node to search for a node_modules folder in our application’s directory, and search for the http module in that folder. If Node does not find the node_modules folder (or the http module within it), it then looks through the global module cache. </p>
+        <p>In the previous code, we passed the name of a module to the require() function. This causes Node to search for a node_modules folder in our application’s directory, and search for the http module in that folder.</p>
+
+        <p>If Node does not find the node_modules folder (or the http module within it), it then looks through the global module cache. </p>
 
       <p>You can also specify an actual file by passing a relative or absolute path, like so:</p>
       <pre class="prettyprint" data-lang="javascript">
         var myModule = require('./myModule.js');
       </pre>
       </article>
-  </slide>
-
-  <slide class="demo dark">
-    <article class="flexbox vcenter">
-      <h1>Webserver DEMO</h1>
-    </article>
   </slide>
 
   <slide class=" ">
@@ -271,12 +270,14 @@ URL: https://code.google.com/p/io-2012-slides
 
       <p>It doesn’t matter what OS you have the above command will install the module you specify.</p>
 
+    <img class="center" src="images/npm.png"></img>
     </article>
+    <footer class="source">image source: npmjs.org</footer>
   </slide>
 
   <slide class="demo dark">
     <article class="flexbox vcenter">
-      <h1>NPM DEMO</h1>
+      <h1>Webserver DEMO</h1>
     </article>
   </slide>
 
@@ -292,8 +293,8 @@ URL: https://code.google.com/p/io-2012-slides
       <p>Combine this with the power of npm and you have a cross platform package manager to install cross platform tooling!</p>
 
     <img class="center" src="images/beautiful.gif"></img>
-    <footer class="source">image source: bit.ly/1ggGtlY</footer>
     </article>
+    <footer class="source">image source: bit.ly/1ggGtlY</footer>
   </slide>
 
   <slide class="demo dark">
