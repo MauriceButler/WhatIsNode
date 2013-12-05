@@ -19,7 +19,7 @@ var SLIDE_CONFIG = {
   // Author information
   presenters: [{
     name: 'Maurice Butler',
-    company: 'Sidelab',
+    company: 'SideLab',
     twitter: '@butlermaurice',
     www: 'http://mauricebutler.wordpress.com/',
     github: 'http://github.com/mauricebuter'
