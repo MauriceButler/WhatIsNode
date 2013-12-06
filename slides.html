@@ -302,6 +302,96 @@ URL: https://code.google.com/p/io-2012-slides
     </article>
   </slide>
 
+  <slide class="">
+    <hgroup>
+      <h1>Why should I care?</h1>
+    </hgroup>
+    <article>
+      <p>Great another new shiny tech that I can't use because all our existing bussiness logic is not going to be rewritten.</p>
+      <p>As .NET developers you can start using node today with your existing code.</p>
+    <img class="center" src="images/can_do.jpg"></img>
+    </article>
+  </slide>
+
+  <slide class="">
+    <hgroup>
+      <h1>Edge.js</h1>
+    </hgroup>
+    <article>
+      <p>Edge.js is a node module written by Tomasz Janczuk (<a href="https://twitter.com/tjanczuk" target="_blank">@tjanczuk</a>) and is on github <a href="https://github.com/tjanczuk/edge" target="_blank">here</a>.</p>
+      <p>Edge.js connects Node.js and .NET and allows the 2 technologies to run in the same process.</p>
+
+      <p>There is a great presentation on Edge.js by Tomasz himself <a href="http://tjanczuk.github.io/edge/" target="_blank">here</a></p>
+
+    <img class="center" src="images/node_hearts_windows.png"></img>
+    </article>
+    <footer class="source">image source: blogs.msdn.com/b/peterlau</footer>
+  </slide>
+
+  <slide class="">
+    <hgroup>
+      <h1>Edge.js</h1>
+    </hgroup>
+    <article>
+      <p>Tomasz says Edge.js connects all the below in one process</p>
+      <ul class="build dots" >
+        <li>49k+ npm modules with 17k+ nuget packages</li>
+        <li>JavaScript with C#, F#, Python, and PowerShell</li>
+        <li>Loose typing with strong typing</li>
+        <li>IO-bound single threaded with CPU-bound multi-threaded</li>
+        <li>Cool with awesome</li>
+    </article>
+  </slide>
+
+  <slide class="">
+    <hgroup>
+      <h1>Edge.js</h1>
+    </hgroup>
+    <article>
+      <p>It does this by providing an async, in-process calling convention between the CLR and node.</p>
+    <img class="center" src="images/node_dotnet.png"></img>
+    </article>
+    <footer class="source">image source: tjanczuk.github.io</footer>
+  </slide>
+
+  <slide class="">
+    <hgroup>
+      <h1>Edge.js</h1>
+    </hgroup>
+    <article>
+      <p>There are a number of ways (some kinda crazy...) to use Edge.js, but I would only reccomend binding to a precompiled assembly.</p>
+    <pre class="prettyprint" data-lang="javascript">
+      var hello = require('edge').func({
+              assemblyFile: 'MyApplication.dll',
+              typeName: 'MyApplication.MyType',
+              methodName: 'MyMethod'
+          });
+
+      hello('World!', function (error, result) { ... });
+    </pre>
+    </article>
+  </slide>
+
+  <slide class="">
+    <hgroup>
+      <h1>Edge.js</h1>
+    </hgroup>
+    <article>
+      <p>The graph below compares the latency of a call from Node.js to C# made in-process using edge.js vs the latency of a localhost HTTP call between 2 processes.</p>
+
+      <p>In both cases the caller invokes .NET function that returns about 22KB of JSON data.</p>
+
+    <img class="center" src="images/edge_speed.png"></img>
+    </article>
+    <footer class="source">image source: github.com/tjanczuk/edge/wiki/Performance</footer>
+  </slide>
+
+  <slide class="demo dark">
+    <article class="flexbox vcenter">
+      <h1>Edge.js DEMO</h1>
+    </article>
+  </slide>
+
   <slide class="title-slide segue nobackground">
     <hgroup class="auto-fadein">
       <h1>Thanks!</h1>

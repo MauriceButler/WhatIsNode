@@ -1549,3 +1549,21 @@ img.center {
     margin-left: auto;
     margin-right: auto;
 }
+
+ul.dots {
+  padding-top: 20px;
+  padding-left: 100px;
+  list-style-type: disc
+}
+
+footer.source {
+  font-size: 14px;
+  color: #a9a9a9;
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 60%;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
